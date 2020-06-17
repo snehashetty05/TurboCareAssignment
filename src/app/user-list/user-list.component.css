@@ -1,0 +1,77 @@
+#thead th{
+    background:#2e4ead;
+    text-align: center ;
+    color: #fff;
+    padding: 8px;
+}
+td{
+    text-align: center;
+}
+
+tbody {
+    display:block;
+    height:250px;
+    overflow:auto;
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+thead {
+    width: calc( 100% - 1em );
+}
+table {
+    width:1200px;
+}
+.add
+{
+
+  margin-left: 1000px;
+  position:relative; 
+  left:80px;
+   top:-80px;
+   
+}
+.search-box{
+    position: absolute;
+    top:180px;
+    left:1370px;
+    transform: translate(-50%,-50%);
+    background: #2f3640;
+    border-radius: 40px;
+    height: 40px;
+    padding: 10px;
+}
+.search-box:hover > .searh-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+.search-box:hover > .searh-btn{
+    background: white;
+}
+.search-btn{
+    color: #e84118;
+    float: right;
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    background: #2F3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+.searh-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    
+}

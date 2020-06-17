@@ -1,0 +1,63 @@
+
+  <body>
+<div>
+    <h3> New User Details</h3>
+</div>
+
+<div class="user-add">
+  <div class="useradd-container">
+    <div class="container">
+
+   <div class="form-group" [class.has-error]="uname.invalid && uname.touched">
+    <input (keyup)="Validate()" id="uname" required pattern="[a-zA-Z0-9]+" name="uname" type="text" #uname="ngModel" [(ngModel)]="newuname" placeholder="Username" class="form-control">
+    <span class="help-block" *ngIf="uname.errors?.required && uname.touched">Username is required</span>
+    <span class="help-block" *ngIf="uname.errors?.pattern && uname.touched">Username can be only in Alphanumeric</span>
+   </div>
+
+  <div class="form-group" [class.has-error]="email.invalid && email.touched">
+    <input (keyup)="Validate()" id="email" required email name="email" type="text" #email="ngModel" [(ngModel)]="newemail" placeholder="Email" class="form-control">
+    <span class="help-block" *ngIf="email.errors?.required && email.touched">Email is required</span>
+    <span class="help-block" *ngIf="email.errors?.email && email.touched">Email is invalid</span>
+  </div>
+
+  <div class="form-group" [class.has-error]="fname.invalid && fname.touched">
+  <input (keyup)="Validate()" id="fname" required pattern="[A-Za-z]+" name="fname" type="text" #fname="ngModel"  [(ngModel)]="newfname" placeholder="First Name"class="form-control">
+  <span class="help-block" *ngIf="fname.errors?.required && fname.touched">First Name is required</span>
+  <span class="help-block" *ngIf="fname.errors?.pattern && fname.touched">First Name is invalid</span>
+  </div>
+
+  <div class="form-group" [class.has-error]="lname.invalid && lname.touched">
+  <input (keyup)="Validate()"  id="lname" required pattern="[A-Za-z]+" name="lname" type="text" #lname="ngModel"  [(ngModel)]="newlname" placeholder="Last Name" class="form-control">
+  <span class="help-block" *ngIf="lname.errors?.required && lname.touched">Last Name is required</span>
+  <span class="help-block" *ngIf="lname.errors?.pattern && lname.touched">Last Name is invalid</span>
+  </div>
+
+  <div class="form-group" [class.has-error]="role.invalid && role.touched">
+  <select (change)="Validate()" id="role" required name="role" #role="ngModel" [(ngModel)]="newrole" placeholder="Role"  class="form-control">
+      <option value="" disabled selected hidden>Role</option>
+      <option value="Admin">Admin</option>
+      <option value="Developer">Developer</option>
+      <option value="Manager">Manager</option>
+      <option value="QA">QA</option>
+    </select>
+    <span class="help-block" *ngIf="role.invalid && role.touched">Role is required</span>
+  </div>
+ 
+  <label style="text-align: center;">Upload Profile Picture </label> 
+  <div class="container text-center">
+    
+    <img [src]="url" height="200"><br><br>
+    <input type="file" id="image" (change)="onselectFile($event)">
+  </div>
+  
+  
+  </div>
+  <button (click)="adduser()" [disabled] = "!isValid" type="button">Add User</button>
+  
+  <button (click)="cancel()" type="button">Cancel</button>
+
+</div>
+</div>
+
+
+</body>
